@@ -13,6 +13,7 @@ import nl.kingdev.engine.utils.Graph;
 import nl.kingdev.engine.utils.Graph.GPUtimer;
 import nl.kingdev.engine.utils.Graph.PerfGraph;
 import nl.kingdev.testing.Sandbox;
+import nl.kingdev.testing.states.GameState;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.glfw.GLFW;
 
@@ -74,6 +75,7 @@ public class HomeScreen extends GuiScreen {
 
     public void onClickPlay(Button button) {
         System.out.println("Clicked on play");
+        Application.instance.setCurrentState(new GameState());
     }
 
 }
