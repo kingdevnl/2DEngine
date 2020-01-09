@@ -1,0 +1,6 @@
+.gradle
+build
+Testing/build
+out/
+Testing/out
+.idea
