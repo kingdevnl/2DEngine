@@ -1,12 +1,14 @@
 package nl.kingdev.testing.screens;
 
 import static nl.kingdev.engine.utils.Graph.*;
+import static nl.kingdev.engine.utils.NVGUtils.rgb;
 import static org.lwjgl.glfw.GLFW.glfwGetTime;
 
 import java.nio.FloatBuffer;
 import nl.kingdev.engine.app.Application;
 import nl.kingdev.engine.gui.GuiScreen;
 import nl.kingdev.engine.gui.widgets.Button;
+import nl.kingdev.engine.gui.widgets.Checkbox;
 import nl.kingdev.engine.gui.widgets.Label;
 import nl.kingdev.engine.gui.widgets.ParticleWidget;
 import nl.kingdev.engine.utils.Graph;
@@ -32,6 +34,7 @@ public class HomeScreen extends GuiScreen {
         addWidget(new Label(Sandbox.WIDTH / 2, 80, "Sandbox", "Robotto", 200));
         addWidget(new Button(Sandbox.WIDTH / 2, (Sandbox.HEIGHT / 2) - 60, 200, "Play",Button.ICON_CHECK,this::onClickPlay));
         addWidget(new Button(Sandbox.WIDTH / 2, (Sandbox.HEIGHT / 2) - 10, 200, "Exit",Button.ICON_CIRCLED_CROSS, button -> System.exit(0)));
+        addWidget(new Checkbox(Sandbox.WIDTH / 2, (Sandbox.HEIGHT / 2) + 110, 20,20, "Agree", rgb(64, 0, 64)));
 
 
         initGraph(fps, GRAPH_RENDER_FPS, "Frame Time");

@@ -1,5 +1,6 @@
 package nl.kingdev.engine.gui.widgets;
 
+import static nl.kingdev.engine.utils.NVGUtils.cpToUTF8;
 import static nl.kingdev.engine.utils.NVGUtils.rgba;
 import static org.lwjgl.nanovg.NanoVG.*;
 import static org.lwjgl.system.MemoryStack.stackPush;
@@ -140,8 +141,6 @@ public class Button extends Widget {
         }
     }
 
-    private static ByteBuffer cpToUTF8(int cp) {
-        return memUTF8(new String(Character.toChars(cp)), false);
-    }
+
 
 }

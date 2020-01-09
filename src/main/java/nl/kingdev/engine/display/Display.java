@@ -32,7 +32,7 @@ public class Display {
         glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
         glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
         handle = glfwCreateWindow(width, height, title, 0, 0);
-        glfwSwapInterval(1);
+        glfwSwapInterval(0);
         glfwMakeContextCurrent(handle);
         GL.createCapabilities();
 

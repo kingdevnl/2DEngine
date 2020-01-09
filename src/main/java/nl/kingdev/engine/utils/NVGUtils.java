@@ -1,5 +1,8 @@
 package nl.kingdev.engine.utils;
 
+import static org.lwjgl.system.MemoryUtil.memUTF8;
+
+import java.nio.ByteBuffer;
 import org.lwjgl.nanovg.NVGColor;
 
 public class NVGUtils {
@@ -23,5 +26,8 @@ public class NVGUtils {
 
     public static boolean isBlack(NVGColor col) {
         return col.r() == 0.0f && col.g() == 0.0f && col.b() == 0.0f && col.a() == 0.0f;
+    }
+    public static ByteBuffer cpToUTF8(int cp) {
+        return memUTF8(new String(Character.toChars(cp)), false);
     }
 }
