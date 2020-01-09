@@ -12,12 +12,16 @@ public class NVGUtils {
 
         return color;
     }
+
     public static NVGColor rgba(int r, int g, int b, int a) {
-        return rgba(r,g,b,a,NVGColor.create());
+        return rgba(r, g, b, a, NVGColor.create());
     }
+
     public static NVGColor rgb(int r, int g, int b) {
-        return rgba(r,g,b,255,NVGColor.create());
+        return rgba(r, g, b, 255, NVGColor.create());
     }
 
-
+    public static boolean isBlack(NVGColor col) {
+        return col.r() == 0.0f && col.g() == 0.0f && col.b() == 0.0f && col.a() == 0.0f;
+    }
 }

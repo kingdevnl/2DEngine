@@ -26,6 +26,10 @@ public class Sandbox extends Application implements IRenderable, ITickable {
         setCurrentState(new GuiState(new HomeScreen()));
 //        setCurrentState(new TestState());
         FontUtil.loadFont("/Robotto.ttf", "Robotto", 150 * 1024);
+        FontUtil.loadFont("/entypo.ttf", "entypo", 40 * 1024);
+        FontUtil.loadFont("/Roboto-Regular.ttf", "Robotto-Regular", 150 * 1024);
+        FontUtil.loadFont("/Roboto-Bold.ttf", "Robotto-Bold", 150 * 1024);
+        FontUtil.loadFont("/NotoEmoji-Regular.ttf", "NotoEmoji-Regular", 450 * 1024);
 
         GLFW.glfwSetMouseButtonCallback(display.getHandle(), (window, button, action, mods) -> {
 

@@ -29,8 +29,8 @@ public class HomeScreen extends GuiScreen {
     public void init() {
         addWidget(new ParticleWidget(110));
         addWidget(new Label(Sandbox.WIDTH / 2, 80, "Sandbox", "Robotto", 200));
-        addWidget(new Button(Sandbox.WIDTH / 2, (Sandbox.HEIGHT / 2) - 60, 200, "Play",this::onClickPlay));
-        addWidget(new Button(Sandbox.WIDTH / 2, (Sandbox.HEIGHT / 2) - 10, 200, "Exit", button -> System.exit(0)));
+        addWidget(new Button(Sandbox.WIDTH / 2, (Sandbox.HEIGHT / 2) - 60, 200, "Play",Button.ICON_CHECK,this::onClickPlay));
+        addWidget(new Button(Sandbox.WIDTH / 2, (Sandbox.HEIGHT / 2) - 10, 200, "Exit",Button.ICON_CIRCLED_CROSS, button -> System.exit(0)));
 
 
         initGraph(fps, GRAPH_RENDER_FPS, "Frame Time");
