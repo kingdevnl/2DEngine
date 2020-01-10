@@ -4,6 +4,7 @@ import nl.kingdev.engine.display.Display;
 import nl.kingdev.engine.state.GameState;
 
 public class Application {
+
     public Display display;
     protected GameState currentState;
     protected GameState prevState;
@@ -14,8 +15,8 @@ public class Application {
 
     }
 
-    public <T extends GameState> T  getState() {
-        return (T)currentState;
+    public <T extends GameState> T getState() {
+        return (T) currentState;
     }
 
 
@@ -28,7 +29,17 @@ public class Application {
         this.currentState = currentState;
         this.currentState.init();
     }
+
     public void popState() {
         this.currentState = this.prevState;
+    }
+
+    public void setCurrentState(GameState state, boolean clearPrevState) {
+        if (clearPrevState) {
+            this.prevState = state;
+        }
+        state.init();
+
+        this.currentState = state;
     }
 }

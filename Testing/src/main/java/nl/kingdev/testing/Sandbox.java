@@ -38,6 +38,9 @@ public class Sandbox extends Application implements IRenderable, ITickable {
                 currentState.onClick(mousePos.x, mousePos.y, button);
             }
         });
+        GLFW.glfwSetKeyCallback(display.getHandle(), (window, key, scancode, action, mods) -> {
+            currentState.onKey(key, action);
+        });
         while (!display.isCloseRequested()) {
             display.clear();
             tick();

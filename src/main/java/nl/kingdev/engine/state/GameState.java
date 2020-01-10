@@ -1,11 +1,9 @@
 package nl.kingdev.engine.state;
 
-import nl.kingdev.engine.interfaces.IClickable;
-import nl.kingdev.engine.interfaces.IInitializable;
-import nl.kingdev.engine.interfaces.IRenderable;
-import nl.kingdev.engine.interfaces.ITickable;
+import nl.kingdev.engine.interfaces.*;
 
-public abstract class GameState implements IInitializable, ITickable, IRenderable, IClickable {
+public abstract class GameState implements IInitializable, ITickable, IRenderable, IClickable,
+    IKeyCallback {
 
     private String stateName;
 
@@ -22,6 +20,11 @@ public abstract class GameState implements IInitializable, ITickable, IRenderabl
 
     @Override
     public void tick() {
+
+    }
+
+    @Override
+    public void onKey(int key, int action) {
 
     }
 

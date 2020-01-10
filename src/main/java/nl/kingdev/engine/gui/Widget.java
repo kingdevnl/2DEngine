@@ -9,9 +9,6 @@ public abstract class Widget implements IRenderable, ITickable, IClickable {
     private int x, y;
 
 
-
-
-
     @Override
     public void render() {
     }

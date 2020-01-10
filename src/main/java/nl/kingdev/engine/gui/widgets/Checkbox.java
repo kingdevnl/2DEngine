@@ -57,6 +57,7 @@ public class Checkbox extends Widget {
         nvgText(vg, (float) (getX() + (width) + (width/4.5)), getY() + (height / 2), label);
         nvgFill(vg);
 
+
         nvgBeginPath(vg);
         nvgFontFace(vg, "entypo");
         nvgFontSize(vg, height * 1.5f);
@@ -64,25 +65,10 @@ public class Checkbox extends Widget {
             nvgFillColor(vg, rgb(0, 255, 0));
         } else {
             nvgFillColor(vg, rgba(255, 0, 0, 255));
-
         }
-
 
         nvgText(vg, (float) (getX() + (width/4.5)), getY() + (height / 2), CHECK_ICON);
         nvgFill(vg);
-
-//        nvgFill(vg);
-////        nvgBeginPath(vg);
-////        nvgText(vg, getX()+ width, getY(), label);
-////        nvgFill(vg);
-
-//
-//
-//        nvgFontSize(vg, height * 2);
-//        nvgFontFace(vg, "entypo");
-//        nvgFillColor(vg, rgba(255, 255, 255, 96));
-//        nvgTextAlign(vg, NVG_ALIGN_LEFT | NVG_ALIGN_MIDDLE);
-//        nvgText(vg, getX() , getY(), CHECK_ICON);
 
     }
 
