@@ -36,15 +36,15 @@ public class Image {
 
     public void drawRect(float x, float y) {
         long vg= Application.instance.display.getVg();
+        nvgSave(vg);
         nvgBeginPath(vg);
-
+        nvgTranslate(vg, x,y);
         NVGPaint paint = NVGPaint.create();
-        nvgImagePattern(vg, x, y, getWidth(), getHeight(), (float) (10f * Math.PI), getId(), 1, paint);
-        nvgRect(vg, x, y, getWidth(), getHeight());
-
-
+        nvgImagePattern(vg, 0, 0, getWidth(), getHeight(), (float) (10f * Math.PI), getId(), 1, paint);
+        nvgRect(vg, 0, 0, getWidth(), getHeight());
         nvgFillPaint(vg, paint);
         nvgFill(vg);
+        nvgRestore(vg);
     }
 
     public void destroy() {

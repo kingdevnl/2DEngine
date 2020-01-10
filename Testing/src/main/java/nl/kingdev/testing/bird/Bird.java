@@ -49,17 +49,8 @@ public class Bird implements IRenderable, ITickable {
     @Override
     public void render() {
         long vg = Application.instance.display.getVg();
-        nvgSave(vg);
-        nvgTranslate(vg, x, y);
-        NVGPaint paint = NVGPaint.create();
-        nvgImagePattern(vg, 0, 0, birdImg.getWidth(), birdImg.getHeight(), 0,
-            birdImg.getId(), 1, paint);
-        nvgRotate(vg, 90);
-        nvgBeginPath(vg);
-        nvgRect(vg, 0, 0, birdImg.getWidth(), birdImg.getHeight());
-        nvgFillPaint(vg, paint);
-        nvgFill(vg);
-        nvgRestore(vg);
+
+        birdImg.drawRect(x,y);
     }
 
     @Override
