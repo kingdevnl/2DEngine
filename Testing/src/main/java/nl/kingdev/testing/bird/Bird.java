@@ -1,16 +1,15 @@
 package nl.kingdev.testing.bird;
 
-import java.io.FileNotFoundException;
+import static org.lwjgl.nanovg.NanoVG.*;
 
+import java.io.FileNotFoundException;
 import nl.kingdev.engine.app.Application;
 import nl.kingdev.engine.image.Image;
 import nl.kingdev.engine.interfaces.IRenderable;
 import nl.kingdev.engine.interfaces.ITickable;
 import nl.kingdev.engine.utils.ImageLoader;
-import nl.kingdev.engine.utils.MathUtil;
 import nl.kingdev.engine.utils.Timer;
-
-import static org.lwjgl.nanovg.NanoVG.*;
+import org.lwjgl.nanovg.NVGPaint;
 
 public class Bird implements IRenderable, ITickable {
 
@@ -50,8 +49,17 @@ public class Bird implements IRenderable, ITickable {
     @Override
     public void render() {
         long vg = Application.instance.display.getVg();
-        birdImg.drawRect(x, y);
- 
+        nvgSave(vg);
+        nvgTranslate(vg, x, y);
+        NVGPaint paint = NVGPaint.create();
+        nvgImagePattern(vg, 0, 0, birdImg.getWidth(), birdImg.getHeight(), 0,
+            birdImg.getId(), 1, paint);
+        nvgRotate(vg, 90);
+        nvgBeginPath(vg);
+        nvgRect(vg, 0, 0, birdImg.getWidth(), birdImg.getHeight());
+        nvgFillPaint(vg, paint);
+        nvgFill(vg);
+        nvgRestore(vg);
     }
 
     @Override
